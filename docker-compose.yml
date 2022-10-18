@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  php:
+    build: .
+    volumes:
+      - ./:/var/www/html
+    container_name: leadgrab_app_sites
+    restart: always
+    environment:
+      ENVIRONMENT: development
+    ports:
+      - '8000:80'
+    external_links:
+      - leadgrab_database
+    networks:
+      - leadgrab_network
+networks:
+  leadgrab_network:
+    external: true

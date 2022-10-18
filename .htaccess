@@ -1,0 +1,24 @@
+ErrorDocument 404	/index.php
+
+RewriteEngine On
+
+# Any custom content pages
+RewriteRule page\-(.*).php 					/pages.php?page=$1 [QSA]
+RewriteRule funnel\-(.*).php 				/funnel.php?page=$1&lander=funnel&offer_num=$1 [QSA]
+RewriteRule lander\-(.*).php 				/lander.php?page=$1&lander=lander&offer_num=$1 [QSA]
+RewriteRule path\-(.*).php	 				/funnel.php?page=$1&type=php&lander=path&offer_num=$1 [QSA]
+
+# Still testing / universal flow
+RewriteRule f\-(.*).php 					/path.php?funnel_type=funnel [QSA]
+
+# Content network specific
+RewriteRule article/([0-9]+)-(.*)/(.*)		/view_article.php?id=$1&channel=$3 [QSA]
+RewriteRule article/([0-9]+)				/view_article.php?id=$1 [QSA]
+RewriteRule category/([0-9]+)-(.*)			/articles.php?category_id=$1&title=$2 [QSA]
+RewriteRule search/(.*)						/articles.php?search=$1 [QSA]
+RewriteRule author/([0-9]+)					/view_author.php?id=$1 [QSA]
+
+# Default
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*).php$						/pages.php?page=$1 [QSA]
