@@ -8,9 +8,9 @@ ob_start();
 session_start();
 
 // Master DB
-define( 'DB_USER', 'root' );
-define( 'DB_PASS', '' );
+define( 'DB_USER', 'leadgrab_user' );
+define( 'DB_PASS', 'n12ln134ldsfq' );
 define( 'DB_NAME', 'leadgrab' );
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', 'mysql.leadgrab.com' );
 
 ?>

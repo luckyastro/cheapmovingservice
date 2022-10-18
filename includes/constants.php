@@ -19,8 +19,7 @@ if ( DEBUG == true )
 	echo '<div style="font-size:18px;color:red;font-weight:bold;text-align:center;">DEBUG MODE IS ENABLED!</div>';
 }
 
-// define( 'PATH', '/home/dh_mn7kxh/cheapmovingservices.com' );
-define( 'PATH', 'E:\Development\htdocs\cheapmovingservices.com' );
+define( 'PATH', '/home/dh_mn7kxh/cheapmovingservices.com' );
 
 define( 'CACHE_DIR', PATH . '/includes/cache' );
 
